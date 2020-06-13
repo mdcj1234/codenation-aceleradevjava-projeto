@@ -24,7 +24,7 @@ public class LogController {
     private LogService logService;
 
     @GetMapping
-    public Page<SimpleLog> search(LogFilter logfilter, @PageableDefault(page = 0, size = 10) Pageable pageble) {
+    public Page<SimpleLog> search(LogFilter logfilter, @PageableDefault(page = 0, size = 10, sort = "id") Pageable pageble) {
         return logService.search(logfilter, pageble);
     }
 
