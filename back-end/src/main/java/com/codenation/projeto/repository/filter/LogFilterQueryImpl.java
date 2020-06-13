@@ -5,6 +5,7 @@ import com.codenation.projeto.repository.projection.SimpleLog;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.query.QueryUtils;
 import org.springframework.util.StringUtils;
 
 import javax.persistence.EntityManager;
@@ -40,6 +41,8 @@ public class LogFilterQueryImpl implements LogFilterQuery {
         Predicate[] predicates = criarRestricoes(logFilter, builder, root);
         criteria.where(predicates);
 
+        criteria.orderBy(QueryUtils.toOrders(pageable.getSort(), root, builder));
+
         TypedQuery<SimpleLog> query = manager.createQuery(criteria);
         adicionarRestricoesDePaginacao(query, pageable);
 
@@ -48,6 +51,11 @@ public class LogFilterQueryImpl implements LogFilterQuery {
 
     private Predicate[] criarRestricoes(LogFilter logFilter, CriteriaBuilder builder, Root<Log> root) {
         List<Predicate> predicates = new ArrayList<>();
+
+        if (!StringUtils.isEmpty(logFilter.getId())) {
+            predicates.add(builder.equal(
+                    builder.lower(root.get("id")), logFilter.getId()));
+        }
 
         if (!StringUtils.isEmpty(logFilter.getLevel())) {
             predicates.add(builder.equal(root.get("level"),logFilter.getLevel()));

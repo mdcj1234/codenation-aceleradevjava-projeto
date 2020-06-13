@@ -8,4 +8,4 @@ CREATE TABLE `users`  (
   `created_at` DATETIME NOT NULL
 );
 
-INSERT INTO users (name,email,password,created_at) VALUES ('Marcio Junior', 'admin@admin.com.br', '$2y$12$ZgDrmppCo96nlafjBNlr5.lm1CBI7n7T2hiHfwJ4tNnCzJwH2SI0q', '2020-06-01');
+INSERT INTO users (name,email,password,created_at) VALUES ('Marcio Junior', 'admin@admin.com.br', '$2y$12$b7acUskgXIS4OLgFEdBLzOx9bNlQRJJd7c6P5od512IbHygPEhdYy', '2020-06-01');
