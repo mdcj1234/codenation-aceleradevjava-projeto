@@ -33,6 +33,10 @@ const Login = () => {
     setFormData({ ...formData, [name]: value })
   }
 
+  function handleNewUser() {
+    history.push('/new-user')
+  }
+
   async function handleSubmit(event:FormEvent) {
     event.preventDefault();
     
@@ -72,7 +76,7 @@ const Login = () => {
         severity="error"
         hidden={validLogin}
       > 
-        Usuário e/ou senha inválidos
+        Usuário e/ou senha inválidos.
       </Alert>
       
       <CssBaseline />
@@ -127,7 +131,7 @@ const Login = () => {
 
           <Grid container>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" variant="body2" onClick={handleNewUser}>
                 {"Clique aqui para criar uma nova conta"}
               </Link>
             </Grid>

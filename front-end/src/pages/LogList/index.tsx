@@ -41,39 +41,6 @@ interface Log {
   createdAt: string;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-          marginTop: 20,
-          width: '100%',
-        }, 
-
-        form: {
-          marginTop: 20,
-          '& > *': {
-            margin: theme.spacing(1),
-          },
-        },
-
-        select: {
-          minWidth: 150,
-          margin: theme.spacing(1),
-        },
-
-        container: {
-            marginTop: 20,
-            height: '100%',
-        },
-        menuButton: {
-            marginRight: theme.spacing(2),
-        },
-        title: {
-            flexGrow: 1,
-            color: '#FFF'
-        },
-    })
-);
-
 const LogList = () => {
   const classes = useStyles();
   const history = useHistory();
@@ -168,6 +135,12 @@ const LogList = () => {
     setSortedColumn(label + "," + (order ? 'desc' : 'asc'));
   };
 
+  const handleLogout = () => {
+
+    api.defaults.headers.common = {'Authorization': ``}
+    history.push('/')
+  }
+
   return (
     <>
     <AppBar position="static">
@@ -175,7 +148,7 @@ const LogList = () => {
             <Typography variant="h6" className={classes.title}>
             Central de Erros
             </Typography>
-            <Button color="inherit">Logout</Button>
+            <Button color="inherit" onClick={handleLogout}>Logout</Button>
         </Toolbar>
     </AppBar>
 
@@ -286,5 +259,39 @@ const LogList = () => {
     </>
   );
 }
+
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+          marginTop: 20,
+          width: '100%',
+        }, 
+
+        form: {
+          marginTop: 20,
+          '& > *': {
+            margin: theme.spacing(1),
+          },
+        },
+
+        select: {
+          minWidth: 150,
+          margin: theme.spacing(1),
+        },
+
+        container: {
+            marginTop: 20,
+            height: '100%',
+        },
+        menuButton: {
+            marginRight: theme.spacing(2),
+        },
+        title: {
+            flexGrow: 1,
+            color: '#FFF'
+        },
+    })
+);
+
 
 export default LogList;

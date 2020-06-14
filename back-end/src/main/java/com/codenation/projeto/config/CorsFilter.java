@@ -13,8 +13,6 @@ import java.io.IOException;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class CorsFilter implements Filter {
 
-    private String allowedOrigins = "http://localhost:3000";
-
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain)
             throws IOException, ServletException {
@@ -22,6 +20,7 @@ public class CorsFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) resp;
 
+        String allowedOrigins = "http://localhost:3000";
         response.setHeader("Access-Control-Allow-Origin", allowedOrigins);
         response.setHeader("Access-Control-Allow-Credentials", "true");
 

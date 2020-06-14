@@ -3,7 +3,6 @@ package com.codenation.projeto.model;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -22,10 +21,6 @@ public class User {
 
     @NotNull
     private String password;
-
-    @NotNull
-    @Column(name = "created_at")
-    private LocalDate createdAt;
 
     public Long getId() {
         return id;
@@ -57,14 +52,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public LocalDate getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDate createdAt) {
-        this.createdAt = createdAt;
     }
 
     @Override
