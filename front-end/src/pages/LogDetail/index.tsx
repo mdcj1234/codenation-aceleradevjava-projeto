@@ -1,10 +1,11 @@
-import React  from 'react';
+import React from 'react';
 import {useHistory} from 'react-router-dom';
 
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -34,39 +35,72 @@ const LogDetail = () => {
 
         <Container maxWidth="lg">
 
-            <form className={classes.form} noValidate autoComplete="off">
+            <Grid container spacing={3}>
+                <Grid item xs={3}>
+                    <TextField 
+                        fullWidth
+                        disabled
+                        variant="outlined"
+                        margin="normal"
+                        placeholder="id"
+                        name="id"
+                        type="number"
+                        inputProps={{ 'aria-label': 'description' }} 
+                    />
+                </Grid>
+                
+                <Grid item xs={3}>
+                    <TextField 
+                        fullWidth
+                        disabled
+                        variant="outlined"
+                        margin="normal"
+                        placeholder="quantity" 
+                        name="quantity"
+                        type="number"
+                        inputProps={{ 'aria-label': 'description' }} 
+                    />
+                </Grid>
 
-                <TextField 
-                margin="normal"
-                placeholder="id"
-                name="id"
-                type="number"
-                inputProps={{ 'aria-label': 'description' }} 
-                />
+                <Grid item xs={6}>
+                    <TextField 
+                        fullWidth
+                        disabled
+                        variant="outlined"
+                        margin="normal"
+                        placeholder="origin" 
+                        name="origin"
+                        inputProps={{ 'aria-label': 'description' }} 
+                    />
+                </Grid>
+                
+                <Grid item xs={12}>
+                    <TextField 
+                        fullWidth
+                        disabled
+                        variant="outlined"
+                        margin="normal"
+                        placeholder="description" 
+                        name="description"
+                        inputProps={{ 'aria-label': 'description' }} 
+                    />
+                </Grid>
 
-                <TextField 
-                margin="normal"
-                placeholder="description" 
-                name="description"
-                inputProps={{ 'aria-label': 'description' }} 
-                />
-
-                <TextField 
-                margin="normal"
-                placeholder="origin" 
-                name="origin"
-                inputProps={{ 'aria-label': 'description' }} 
-                />
-
-                <TextField 
-                margin="normal"
-                placeholder="quantity" 
-                name="quantity"
-                type="number"
-                inputProps={{ 'aria-label': 'description' }} 
-                />
-            </form>
-
+                <Grid item xs={12}>
+                    <TextField 
+                        fullWidth
+                        disabled
+                        multiline
+                        rows={5}
+                        rowsMax={10}
+                        variant="outlined"
+                        margin="normal"
+                        placeholder="details" 
+                        name="details"
+                        inputProps={{ 'aria-label': 'description' }} 
+                    />
+                </Grid>
+            </Grid>
         </Container>
         </>
     )
@@ -79,25 +113,15 @@ const useStyles = makeStyles((theme: Theme) =>
           width: '100%',
         }, 
 
-        form: {
-          marginTop: 20,
-          '& > *': {
-            margin: theme.spacing(1),
-          },
-        },
-
-        select: {
-          minWidth: 150,
-          margin: theme.spacing(1),
-        },
-
         container: {
             marginTop: 20,
             height: '100%',
         },
+        
         menuButton: {
             marginRight: theme.spacing(2),
         },
+        
         title: {
             flexGrow: 1,
             color: '#FFF'

@@ -1,5 +1,5 @@
 import React , { useState , useEffect , ChangeEvent } from 'react';
-import {useHistory} from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -46,32 +46,11 @@ const LogList = () => {
   const history = useHistory();
   const columns: Column[] = [
     { id: 'id', label: 'Id', minWidth: 50 },
-    { 
-      id: 'level', 
-      label: 'Level', 
-      minWidth: 100 
-    },
-    {
-      id: 'description',
-      label: 'Description',
-      minWidth: 200,
-    },
-    {
-      id: 'origin',
-      label: 'Origin',
-      minWidth: 100,
-    },
-    {
-      id: 'quantity',
-      label: 'Quantity',
-      minWidth: 50,
-      format: (value: number) => value.toFixed(0),
-    },
-    {
-      id: 'createdAt',
-      label: 'CreatedAt',
-      minWidth: 150,
-    },
+    { id: 'level', label: 'Level', minWidth: 100 },
+    { id: 'description', label: 'Description', minWidth: 200, },
+    { id: 'origin', label: 'Origin', minWidth: 100, },
+    { id: 'quantity', label: 'Quantity', minWidth: 50, format: (value: number) => value.toFixed(0), },
+    { id: 'createdAt', label: 'CreatedAt', minWidth: 150, },
   ];
   const types: string[] = ['','ERROR','INFO','WARNING'];
 
@@ -233,11 +212,23 @@ const LogList = () => {
                 <TableRow hover role="checkbox" tabIndex={-1} key={item.id}>
                   {columns.map((column) => {
                     const value = item[column.id];
-                    return (
-                      <TableCell key={column.id} align={column.align}>
-                        {column.format && typeof value === 'number' ? column.format(value) : value}
-                      </TableCell>
-                    );
+                    if (column.id === 'id') {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                              <Link to={{
+                                pathname: '/logs/detail',
+                                search: '?id='+value
+                                }}> {column.format && typeof value === 'number' ? column.format(value) : value} 
+                              </Link>
+                        </TableCell>
+                      );
+                    } else {
+                      return (
+                        <TableCell key={column.id} align={column.align}>
+                            {column.format && typeof value === 'number' ? column.format(value) : value} 
+                        </TableCell>
+                      );
+                    }
                   })}
                 </TableRow>
               );
