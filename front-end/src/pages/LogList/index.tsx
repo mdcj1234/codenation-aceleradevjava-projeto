@@ -15,11 +15,12 @@ import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-
+import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import FormControl from '@material-ui/core/FormControl';
 
 import api from '../../services/api';
 import './styles.css'
@@ -131,55 +132,81 @@ const LogList = () => {
         </Toolbar>
     </AppBar>
 
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" className={classes.container}>
 
-      <form className={classes.form} noValidate autoComplete="off">
+        <Grid container spacing={3}>
+          
+          <Grid item xs={2}>
+            <FormControl variant="outlined" className={classes.formControl}>
+              <Select
+                name="Level"
+                label="Level"
+                id="level-id"
+                value={formData.level}
+                onChange={handleSelectChange}
+              >
+                <MenuItem value={types[0]}>TODOS</MenuItem>
+                <MenuItem value={types[1]}>ERROR</MenuItem>
+                <MenuItem value={types[2]}>INFO</MenuItem>
+                <MenuItem value={types[3]}>WARNING</MenuItem>
+              </Select>
+            </FormControl>
+          </Grid>
 
-        <TextField 
-          margin="normal"
-          placeholder="id"
-          name="id"
-          type="number"
-          inputProps={{ 'aria-label': 'description' }} 
-          onChange={handleInputChange}
-          />
+          <Grid item xs={2}>
 
-        <Select
-          className={classes.select} 
-          placeholder="level"
-          id="level"
-          value={formData.level}
-          onChange={handleSelectChange}
-        >
-          <MenuItem value={types[0]}>TODOS</MenuItem>
-          <MenuItem value={types[1]}>ERROR</MenuItem>
-          <MenuItem value={types[2]}>INFO</MenuItem>
-          <MenuItem value={types[3]}>WARNING</MenuItem>
-        </Select>
+            <TextField 
+              margin="normal"
+              placeholder="id"
+              name="id"
+              type="number"
+              variant="outlined"
+              inputProps={{ 'aria-label': 'description' }} 
+              onChange={handleInputChange}
+              />
+          </Grid>
 
-        <TextField 
-          margin="normal"
-          placeholder="description" 
-          name="description"
-          inputProps={{ 'aria-label': 'description' }} 
-          onChange={handleInputChange}
-          />
-        <TextField 
-          margin="normal"
-          placeholder="origin" 
-          name="origin"
-          inputProps={{ 'aria-label': 'description' }} 
-          onChange={handleInputChange}
-          />
-        <TextField 
-          margin="normal"
-          placeholder="quantity" 
-          name="quantity"
-          type="number"
-          inputProps={{ 'aria-label': 'description' }} 
-          onChange={handleInputChange}
-          />
-      </form>
+          <Grid item xs={2}>
+
+            <TextField 
+            margin="normal"
+            placeholder="description" 
+            name="description"
+            variant="outlined"
+            inputProps={{ 'aria-label': 'description' }} 
+            onChange={handleInputChange}
+            />
+
+          </Grid>
+          
+          <Grid item xs={2}>
+
+            <TextField 
+            margin="normal"
+            placeholder="origin" 
+            name="origin"
+            variant="outlined"
+            inputProps={{ 'aria-label': 'description' }} 
+            onChange={handleInputChange}
+            />
+
+          </Grid>
+
+          <Grid item xs={2}>
+
+            <TextField 
+            margin="normal"
+            placeholder="quantity" 
+            name="quantity"
+            type="number"
+            variant="outlined"
+            inputProps={{ 'aria-label': 'description' }} 
+            onChange={handleInputChange}
+            />
+          </Grid>
+          
+
+        </Grid>
 
     </Container>
 
@@ -215,11 +242,12 @@ const LogList = () => {
                     if (column.id === 'id') {
                       return (
                         <TableCell key={column.id} align={column.align}>
-                              <Link to={{
-                                pathname: '/logs/detail',
-                                search: '?id='+value
-                                }}> {column.format && typeof value === 'number' ? column.format(value) : value} 
-                              </Link>
+                            <Link to={{
+                              pathname: '/logs/detail',
+                              state: { id: value }
+                            }}>
+                              {column.format && typeof value === 'number' ? column.format(value) : value} 
+                            </Link>           
                         </TableCell>
                       );
                     } else {
@@ -254,20 +282,13 @@ const LogList = () => {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-          marginTop: 20,
-          width: '100%',
+            marginTop: 20,
+            width: '100%',
         }, 
-
-        form: {
-          marginTop: 20,
-          '& > *': {
-            margin: theme.spacing(1),
-          },
-        },
-
-        select: {
-          minWidth: 150,
-          margin: theme.spacing(1),
+        
+        formControl: {
+            marginTop: theme.spacing(2),
+            minWidth: 150,
         },
 
         container: {

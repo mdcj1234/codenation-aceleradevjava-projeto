@@ -1,26 +1,65 @@
-import React from 'react';
-import {useHistory} from 'react-router-dom';
+import React, {useEffect , useState} from 'react';
+import {useHistory , useLocation} from 'react-router-dom';
 
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 
 import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
-
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
+import api from '../../services/api';
+
+interface Log {
+    id: number;
+    level: string;
+    description: string;
+    detail: string;
+    origin: string;
+    quantity: number;
+    createdAt: string;
+}
+
+interface LogState {
+    id: string;
+}
+
 const LogDetail = () => {
 
     const classes = useStyles();
     const history = useHistory();
+    const location = useLocation<LogState>().state;
+
+    const [items, setItems] = useState<Log>({
+        id: 0,
+        level: '',
+        description: '',
+        detail: '',
+        origin: '',
+        quantity: 0,
+        createdAt: ''
+    });
 
     const handleGoBack = () => {
-
         history.push('/logs')
-      }
+    }
+
+    useEffect(() => {
+        
+        const logstate: LogState = {
+            id: location.id
+        };
+
+        api.get('logs/' + logstate.id).then(response => {
+          setItems(response.data);
+        }).catch(function (error) {
+          history.push('/')
+        })
+    
+    },[history, location]);
 
     return (
         <>
@@ -33,18 +72,17 @@ const LogDetail = () => {
             </Toolbar>
         </AppBar>
 
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" className={classes.container}>
 
             <Grid container spacing={3}>
                 <Grid item xs={3}>
                     <TextField 
                         fullWidth
-                        disabled
                         variant="outlined"
                         margin="normal"
-                        placeholder="id"
-                        name="id"
+                        label="id"
                         type="number"
+                        value={String(items.id)}
                         inputProps={{ 'aria-label': 'description' }} 
                     />
                 </Grid>
@@ -52,12 +90,11 @@ const LogDetail = () => {
                 <Grid item xs={3}>
                     <TextField 
                         fullWidth
-                        disabled
                         variant="outlined"
                         margin="normal"
-                        placeholder="quantity" 
-                        name="quantity"
+                        label="quantity"
                         type="number"
+                        value={String(items.quantity)}
                         inputProps={{ 'aria-label': 'description' }} 
                     />
                 </Grid>
@@ -65,11 +102,10 @@ const LogDetail = () => {
                 <Grid item xs={6}>
                     <TextField 
                         fullWidth
-                        disabled
                         variant="outlined"
                         margin="normal"
-                        placeholder="origin" 
-                        name="origin"
+                        label="origin"
+                        value={items.origin}
                         inputProps={{ 'aria-label': 'description' }} 
                     />
                 </Grid>
@@ -77,11 +113,10 @@ const LogDetail = () => {
                 <Grid item xs={12}>
                     <TextField 
                         fullWidth
-                        disabled
                         variant="outlined"
                         margin="normal"
-                        placeholder="description" 
-                        name="description"
+                        label="description"
+                        value={items.description}
                         inputProps={{ 'aria-label': 'description' }} 
                     />
                 </Grid>
@@ -89,14 +124,13 @@ const LogDetail = () => {
                 <Grid item xs={12}>
                     <TextField 
                         fullWidth
-                        disabled
                         multiline
                         rows={5}
                         rowsMax={10}
                         variant="outlined"
                         margin="normal"
-                        placeholder="details" 
-                        name="details"
+                        label="detail"
+                        value={items.detail}
                         inputProps={{ 'aria-label': 'description' }} 
                     />
                 </Grid>
@@ -114,7 +148,7 @@ const useStyles = makeStyles((theme: Theme) =>
         }, 
 
         container: {
-            marginTop: 20,
+            marginTop: 50,
             height: '100%',
         },
         

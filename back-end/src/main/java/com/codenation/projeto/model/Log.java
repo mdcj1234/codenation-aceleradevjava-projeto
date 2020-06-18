@@ -21,7 +21,7 @@ public class Log {
     private String description;
 
     @NotNull
-    private String details;
+    private String detail;
 
     @NotNull
     private String origin;
@@ -57,12 +57,12 @@ public class Log {
         this.description = description;
     }
 
-    public String getDetails() {
-        return details;
+    public String getDetail() {
+        return detail;
     }
 
-    public void setDetails(String details) {
-        this.details = details;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
     public String getOrigin() {
