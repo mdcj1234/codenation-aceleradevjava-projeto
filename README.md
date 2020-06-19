@@ -27,7 +27,7 @@ $ git clone https://github.com/mdcj1234/Projeto-AceleraDev-Java.git
 ### Compilando o back-end e empacotando a aplicação
 
 ```bash
-$ cd Projeto-AceleraDev-Java
+$ cd Projeto-AceleraDev-Java/back-end
 $ mvn compile
 $ mvn package
 ```
@@ -35,7 +35,7 @@ $ mvn package
 ### Executando a aplicação
 
 ```bash
-$ cd Projeto-AceleraDev-Java
+$ cd Projeto-AceleraDev-Java/back-end
 $ mvn spring-boot:run
 ```
 
@@ -57,7 +57,7 @@ Representação visual das classes da aplicação e das tabelas do banco de dado
 
 ## (Bônus) Front-end
 
-O front-end não era necessário para cumprir os requisitos do projeto. No entanto ela facilita a visualização do projeto como um todo.
+O front-end não era necessário para cumprir os requisitos do projeto. No entanto ele facilita a visualização do projeto como um todo.
 
 ## Deploy
 
