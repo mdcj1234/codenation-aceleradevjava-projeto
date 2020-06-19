@@ -48,8 +48,7 @@ Após executar a aplicação, você pode acessar a documentação da API, conten
 Representação visual das classes da aplicação e das tabelas do banco de dados.
 
 #### Banco de Dados
-
-<img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/db.png" alt="Imagem representando as tabelas do banco de dados">
+<img src="https://github.com/mdcj1234/Projeto-AceleraDev-Java/back-end/src/main/resources/assests/diagrama-er.jpg" alt="Imagem representando as tabelas do banco de dados">
 
 ## Desvolvedor
 
