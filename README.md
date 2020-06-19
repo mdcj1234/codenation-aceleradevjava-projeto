@@ -12,7 +12,7 @@ API Rest para centralizar registros de erros de aplicações.
 - [H2](http://h2database.com/html/main.html) ```1.4.200``` 
 - [Swagger](https://swagger.io/) ```2.9.2```
 
-## Instalação
+## Instalação (para o back-end)
 
 A aplicação foi configurada pra ser executada com o Maven, portanto será necessário a instalação dessa ferramenta. 
 
@@ -21,40 +21,22 @@ A aplicação foi configurada pra ser executada com o Maven, portanto será nece
 ### Clonando o repositório:
 
 ```bash
-$ git clone https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back.git
+$ git clone https://github.com/mdcj1234/Projeto-AceleraDev-Java.git
 ```
 
-### Compilando e empacotando a aplicação
+### Compilando o back-end e empacotando a aplicação
 
 ```bash
-$ cd squad-1-ad-java-e-vue-online-ca-back
+$ cd Projeto-AceleraDev-Java
 $ mvn compile
 $ mvn package
-```
-
-### Testando a aplicação
-
-```bash
-$ cd squad-1-ad-java-e-vue-online-ca-back
-$ mvn test
 ```
 
 ### Executando a aplicação
 
 ```bash
-$ cd squad-1-ad-java-e-vue-online-ca-back
+$ cd Projeto-AceleraDev-Java
 $ mvn spring-boot:run
-```
-
-> Para testar se a aplicação está em execução, acesse o endereço ```http://localhost:8080/users```. A resposta deve ser um JSON vazio.
-
-## Executando via Docker
-
-A aplicação foi configurada para possibilitar sua execução via Docker.
-
-```bash
-$ cd squad-1-ad-java-e-vue-online-ca-back
-$ docker-compose up
 ```
 
 ## Endpoints
@@ -65,22 +47,17 @@ Após executar a aplicação, você pode acessar a documentação da API, conten
 
 Representação visual das classes da aplicação e das tabelas do banco de dados.
 
-#### Classe
-
-<img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/uml.png" alt="Imagem representando as classes da aplicação">
-
 #### Banco de Dados
 
 <img src="https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-back/blob/master/assets/db.png" alt="Imagem representando as tabelas do banco de dados">
 
 ## Equipe de desenvolvimento
 
-- [Aislan Nadrowski](https://github.com/ANadrowski) 
-- [Adjamilton Junior](https://github.com/ajunior)
+- [Márcio Junior](https://www.linkedin.com/in/marciojr1994/) 
 
-## Front-end
+## (Bônus) Front-end
 
-O [front-end](https://github.com/codenation-dev/squad-1-ad-java-e-vue-online-ca-front) para esta aplicação foi desenvolvido por [David Alves](https://github.com/davidalves1), participante da Aceleração Dev de Vue.js.
+O front-end não era necessário para cumprir os requisitos do projeto. No entanto ela facilita a visualização do projeto como um todo.
 
 ## Deploy
 
