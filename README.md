@@ -58,12 +58,18 @@ Representação visual das classes da aplicação e das tabelas do banco de dado
 
 O front-end não era necessário para cumprir os requisitos do projeto. No entanto ele facilita a visualização do projeto como um todo.
 
-## Deploy
+## Agradecimentos
 
-Para fins de demonstração de funcionamento, foi feito o deploy da aplicação nas plataformas [Heroku](https://www.heroku.com/) e [Netlify](https://www.netlify.com/).
+Agradeço a toda a equipe da Codenation por essa maravilhosa experiência que tive em aprender e me motivar a ser um desenvolvedor mais completo.
+Agradeço tambem a todas as empresas apoiadoras desse projeto:
 
-| Plataforma | Serviço | Link |
-| :--- | :--- | :--- |
-| Netlify | Front-end | [https://squad-1-front.netlify.com](https://squad-1-front.netlify.com)|
-| Heroku | Back-end | *Sem acesso externo* |
-| Heroku | Banco de Dados | *Sem acesso externo* |
+- [CI&T](https://br.ciandt.com/carreiras/we-are-hiring)
+- [Conta Azul](https://contaazul.com/carreiras/)
+- [GuiaBolso](https://jobs.kenoby.com/guiabolso)
+- [PagueVeloz](https://www.pagueveloz.com.br/)
+- [Rocket.chat](http://website-staging.rocket.chat/jobs/)
+- [Sanar](https://jobs.kenoby.com/sanar)
+- [Nextfat](https://nexfar.com.br/#/)
+- [Senior](https://www.senior.com.br/carreiras)
+- [Voyager](https://www.voyagerportal.com/company/)
+- [Itaú](https://www.itau.com.br/trabalhe-conosco/)
