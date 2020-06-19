@@ -12,7 +12,7 @@ API Rest para centralizar registros de erros de aplicações.
 - [H2](http://h2database.com/html/main.html) ```1.4.200``` 
 - [Swagger](https://swagger.io/) ```2.9.2```
 
-## Instalação (para o back-end)
+## Instalação
 
 A aplicação foi configurada pra ser executada com o Maven, portanto será necessário a instalação dessa ferramenta. 
 
@@ -27,7 +27,7 @@ $ git clone https://github.com/mdcj1234/Projeto-AceleraDev-Java.git
 ### Compilando o back-end e empacotando a aplicação
 
 ```bash
-$ cd Projeto-AceleraDev-Java/back-end
+$ cd Projeto-AceleraDev-Java
 $ mvn compile
 $ mvn package
 ```
@@ -35,7 +35,7 @@ $ mvn package
 ### Executando a aplicação
 
 ```bash
-$ cd Projeto-AceleraDev-Java/back-end
+$ cd Projeto-AceleraDev-Java
 $ mvn spring-boot:run
 ```
 
@@ -48,7 +48,7 @@ Após executar a aplicação, você pode acessar a documentação da API, conten
 Representação visual das classes da aplicação e das tabelas do banco de dados.
 
 #### Banco de Dados
-<img src="https://github.com/mdcj1234/Projeto-AceleraDev-Java/blob/master/back-end/src/main/resources/assests/diagrama-er.jpg" alt="Imagem representando as tabelas do banco de dados">
+<img src="https://github.com/mdcj1234/Projeto-AceleraDev-Java/blob/master/src/main/resources/assests/diagrama-er.jpg" alt="Imagem representando as tabelas do banco de dados">
 
 ## Desenvolvedor
 
