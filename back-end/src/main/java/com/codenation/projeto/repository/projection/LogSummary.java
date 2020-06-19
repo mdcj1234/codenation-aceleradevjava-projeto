@@ -3,7 +3,7 @@ package com.codenation.projeto.repository.projection;
 import com.codenation.projeto.model.Level;
 import java.time.LocalDate;
 
-public class SimpleLog {
+public class LogSummary {
 
     private Long id;
     private Level level;
@@ -12,7 +12,7 @@ public class SimpleLog {
     private Integer quantity;
     private LocalDate createdAt;
 
-    public SimpleLog(Long id, Level level, String description, String origin, Integer quantity, LocalDate createdAt) {
+    public LogSummary(Long id, Level level, String description, String origin, Integer quantity, LocalDate createdAt) {
         this.id = id;
         this.level = level;
         this.description = description;

@@ -2,6 +2,8 @@ package com.codenation.projeto.repository.filter;
 
 import com.codenation.projeto.model.Level;
 
+import java.time.LocalDate;
+
 public class LogFilter {
 
     private Long id;
@@ -13,6 +15,10 @@ public class LogFilter {
     private String origin;
 
     private Integer quantity;
+
+    private LocalDate createdAtInit;
+
+    private LocalDate createdAtEnd;
 
     public Long getId() { return id; }
 
@@ -49,5 +55,13 @@ public class LogFilter {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+
+    public LocalDate getCreatedAtInit() { return createdAtInit; }
+
+    public void setCreatedAtInit(LocalDate createdAtInit) { this.createdAtInit = createdAtInit; }
+
+    public LocalDate getCreatedAtEnd() { return createdAtEnd; }
+
+    public void setCreatedAtEnd(LocalDate createdAtEnd) { this.createdAtEnd = createdAtEnd; }
 
 }

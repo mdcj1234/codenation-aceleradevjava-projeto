@@ -1,7 +1,7 @@
 package com.codenation.projeto.repository.filter;
 
 import com.codenation.projeto.model.Log;
-import com.codenation.projeto.repository.projection.SimpleLog;
+import com.codenation.projeto.repository.projection.LogSummary;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
@@ -24,13 +24,13 @@ public class LogFilterQueryImpl implements LogFilterQuery {
     private EntityManager manager;
 
     @Override
-    public Page<SimpleLog> search(LogFilter logFilter, Pageable pageable) {
+    public Page<LogSummary> search(LogFilter logFilter, Pageable pageable) {
 
         CriteriaBuilder builder = manager.getCriteriaBuilder();
-        CriteriaQuery<SimpleLog> criteria = builder.createQuery(SimpleLog.class);
+        CriteriaQuery<LogSummary> criteria = builder.createQuery(LogSummary.class);
         Root<Log> root = criteria.from(Log.class);
 
-        criteria.select(builder.construct(SimpleLog.class
+        criteria.select(builder.construct(LogSummary.class
                 , root.get("id")
                 , root.get("level")
                 , root.get("description")
@@ -43,7 +43,7 @@ public class LogFilterQueryImpl implements LogFilterQuery {
 
         criteria.orderBy(QueryUtils.toOrders(pageable.getSort(), root, builder));
 
-        TypedQuery<SimpleLog> query = manager.createQuery(criteria);
+        TypedQuery<LogSummary> query = manager.createQuery(criteria);
         adicionarRestricoesDePaginacao(query, pageable);
 
         return new PageImpl<>(query.getResultList(), pageable, total(logFilter));
@@ -74,6 +74,16 @@ public class LogFilterQueryImpl implements LogFilterQuery {
         if (!StringUtils.isEmpty(logFilter.getQuantity())) {
             predicates.add(builder.equal(
                     builder.lower(root.get("quantity")), logFilter.getQuantity()));
+        }
+
+        if (!StringUtils.isEmpty(logFilter.getCreatedAtInit())) {
+            predicates.add(
+                    builder.greaterThanOrEqualTo(root.get("createdAt"), logFilter.getCreatedAtInit()));
+        }
+
+        if (!StringUtils.isEmpty(logFilter.getCreatedAtEnd())) {
+            predicates.add(
+                    builder.lessThanOrEqualTo(root.get("createdAt"), logFilter.getCreatedAtEnd()));
         }
 
         return predicates.toArray(new Predicate[0]);

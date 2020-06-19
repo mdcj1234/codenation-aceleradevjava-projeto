@@ -2,7 +2,7 @@ package com.codenation.projeto.controller;
 
 import com.codenation.projeto.model.Log;
 import com.codenation.projeto.repository.filter.LogFilter;
-import com.codenation.projeto.repository.projection.SimpleLog;
+import com.codenation.projeto.repository.projection.LogSummary;
 import com.codenation.projeto.service.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -24,7 +24,7 @@ public class LogController {
     private LogService logService;
 
     @GetMapping
-    public Page<SimpleLog> search(LogFilter logfilter, @PageableDefault(page = 0, size = 10, sort = "id") Pageable pageble) {
+    public Page<LogSummary> search(LogFilter logfilter, @PageableDefault(page = 0, size = 10, sort = "id") Pageable pageble) {
         return logService.search(logfilter, pageble);
     }
 
