@@ -1,6 +1,6 @@
 > Desafio final da Aceleração Dev de Java da Codenation.
 
-# Central de Erros - Back-end (API)
+# Central de Erros
 
 API Rest para centralizar registros de erros de aplicações.
 
