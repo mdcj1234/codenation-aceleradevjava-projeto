@@ -1,6 +1,7 @@
 package com.codenation.projeto.repository.filter;
 
 import com.codenation.projeto.model.Level;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -16,8 +17,10 @@ public class LogFilter {
 
     private Integer quantity;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate createdAtInit;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate createdAtEnd;
 
     public Long getId() { return id; }

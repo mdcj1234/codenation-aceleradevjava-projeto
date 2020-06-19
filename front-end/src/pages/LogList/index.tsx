@@ -66,7 +66,9 @@ const LogList = () => {
     level: '',
     description: '',
     origin: '',
-    quantity: ''
+    quantity: '',
+    createdAtInit: '',
+    createdAtEnd: ''
   })
 
   useEffect(() => {
@@ -126,21 +128,56 @@ const LogList = () => {
     <AppBar position="static">
         <Toolbar>
             <Typography variant="h6" className={classes.title}>
-            Central de Erros
+              Central de Erros
             </Typography>
             <Button color="inherit" onClick={handleLogout}>Logout</Button>
         </Toolbar>
     </AppBar>
 
     <Container maxWidth="lg" className={classes.container}>
-
         <Grid container spacing={3}>
           
+          <Grid item xs={2}>
+
+            <TextField 
+            margin="normal"
+            placeholder="createdAt init" 
+            name="createdAtInit"
+            type="date"
+            variant="outlined"
+            inputProps={{ 'aria-label': 'description' }} 
+            onChange={handleInputChange}
+            />
+
+            </Grid>
+
+            <Grid item xs={2}>
+
+            <TextField 
+            margin="normal"
+            placeholder="createdAt end" 
+            name="createdAtEnd"
+            type="date"
+            variant="outlined"
+            inputProps={{ 'aria-label': 'description' }} 
+            onChange={handleInputChange}
+            />
+
+          </Grid>
+
+        </Grid>
+    </Container>
+
+    <Container maxWidth="lg" className={classes.container}>
+
+      <Grid container spacing={3}>
+
           <Grid item xs={2}>
             <FormControl variant="outlined" className={classes.formControl}>
               <Select
                 name="Level"
                 label="Level"
+                placeholder="Level"
                 id="level-id"
                 value={formData.level}
                 onChange={handleSelectChange}
@@ -205,7 +242,6 @@ const LogList = () => {
             />
           </Grid>
           
-
         </Grid>
 
     </Container>
@@ -288,7 +324,7 @@ const useStyles = makeStyles((theme: Theme) =>
         
         formControl: {
             marginTop: theme.spacing(2),
-            minWidth: 150,
+            width: '100%',
         },
 
         container: {
