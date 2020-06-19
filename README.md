@@ -50,7 +50,7 @@ Representação visual das classes da aplicação e das tabelas do banco de dado
 #### Banco de Dados
 <img src="https://github.com/mdcj1234/Projeto-AceleraDev-Java/blob/master/back-end/src/main/resources/assests/diagrama-er.jpg" alt="Imagem representando as tabelas do banco de dados">
 
-## Desvolvedor
+## Desenvolvedor
 
 - [Márcio Junior](https://www.linkedin.com/in/marciojr1994/) 
 
