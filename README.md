@@ -1,19 +1,16 @@
-> Desafio final da Aceleração Dev de Java da Codenation, com apoio da Conta Azul.
+> Desafio final da Aceleração Dev de Java da Codenation.
 
 # Central de Erros - Back-end (API)
 
-Desenvolvimento de uma aplicação restful para registro e acesso a logs de erros registrados por microserviços, para possibilitar o monitoramento e auxiliar na tomada de decisão.
-
-*A aplicação foi desenvolvida em conformidade com as instruções para o projeto final.* 
+API Rest para centralizar registros de erros de aplicações.
 
 ## Tecnologia
 
 - [Java](https://www.oracle.com/technetwork/java/javase/downloads/index.html) ```1.8```
-- [Spring Boot](https://spring.io/projects/spring-boot) ```2.1.7.RELEASE```
-- [Maven](https://maven.apache.org/) ```3.6.2```
-- [PostgreSQL](https://www.postgresql.org/) ```10.9``` 
+- [Spring Boot](https://spring.io/projects/spring-boot) ```2.3.0.RELEASE```
+- [Maven](https://maven.apache.org/) ```4.0.0```
+- [H2](http://h2database.com/html/main.html) ```1.4.200``` 
 - [Swagger](https://swagger.io/) ```2.9.2```
-- [Docker](https://www.docker.com/) ```19.03.2 CE```
 
 ## Instalação
 
