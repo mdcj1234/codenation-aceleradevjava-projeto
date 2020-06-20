@@ -59,7 +59,7 @@ Representação visual das classes da aplicação e das tabelas do banco de dado
 O front-end não era necessário para cumprir os requisitos do projeto. No entanto ele facilita a visualização do projeto como um todo.
 
 ```bash
-$ git clone https://github.com/mdcj1234/Projeto-AceleraDev-Java-Front-end.git
+$ git clone https://github.com/mdcj1234/aceleradev-java-projeto-front-end.git
 ```
 ## Agradecimentos
 
