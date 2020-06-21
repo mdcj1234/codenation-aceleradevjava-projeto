@@ -27,7 +27,7 @@ $ git clone https://github.com/mdcj1234/Projeto-AceleraDev-Java.git
 ### Compilando o back-end e empacotando a aplicação
 
 ```bash
-$ cd Projeto-AceleraDev-Java
+$ cd aceleradev-java-projeto
 $ mvn compile
 $ mvn package
 ```
@@ -35,7 +35,7 @@ $ mvn package
 ### Executando a aplicação
 
 ```bash
-$ cd Projeto-AceleraDev-Java
+$ cd aceleradev-java-projeto
 $ mvn spring-boot:run
 ```
 
