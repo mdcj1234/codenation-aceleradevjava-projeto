@@ -21,7 +21,7 @@ A aplicação foi configurada pra ser executada com o Maven, portanto será nece
 ### Clonando o repositório:
 
 ```bash
-$ git clone https://github.com/mdcj1234/Projeto-AceleraDev-Java.git
+$ git clone https://github.com/mdcj1234/aceleradev-java-projeto.git
 ```
 
 ### Compilando o back-end e empacotando a aplicação
