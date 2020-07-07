@@ -21,7 +21,7 @@ A aplicação foi configurada pra ser executada com o Maven, portanto será nece
 ### Clonando o repositório:
 
 ```bash
-$ git clone https://github.com/mdcj1234/aceleradev-java-projeto.git
+$ git clone https://github.com/mdcj1234/codenation-aceleradevjava-projeto.git
 ```
 
 ### Compilando o back-end e empacotando a aplicação
@@ -54,13 +54,6 @@ Representação visual das classes da aplicação e das tabelas do banco de dado
 
 - [Márcio Junior](https://www.linkedin.com/in/marciojr1994/) 
 
-## (Bônus) Front-end
-
-O front-end não era necessário para cumprir os requisitos do projeto. No entanto ele facilita a visualização do projeto como um todo.
-
-```bash
-$ git clone https://github.com/mdcj1234/aceleradev-java-projeto-front-end.git
-```
 ## Agradecimentos
 
 Agradeço a toda a equipe da Codenation por essa maravilhosa experiência que tive em aprender e me motivar a ser um desenvolvedor mais completo.
