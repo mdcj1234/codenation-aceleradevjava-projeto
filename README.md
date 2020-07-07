@@ -27,7 +27,7 @@ $ git clone https://github.com/mdcj1234/codenation-aceleradevjava-projeto.git
 ### Compilando o back-end e empacotando a aplicação
 
 ```bash
-$ cd aceleradev-java-projeto
+$ cd codenation-aceleradevjava-projeto/backend
 $ mvn compile
 $ mvn package
 ```
@@ -35,7 +35,7 @@ $ mvn package
 ### Executando a aplicação
 
 ```bash
-$ cd aceleradev-java-projeto
+$ cd codenation-aceleradevjava-projeto/backend
 $ mvn spring-boot:run
 ```
 
